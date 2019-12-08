@@ -1,0 +1,11 @@
+
+- hosts: web01
+  become: yes
+  gather_facts: false
+  vars:
+       name: Chakri4
+       uid: 5550
+       comment: testing purpose
+  tasks:
+       - name: User creation
+         user: name={{name}} uid={{uid}}

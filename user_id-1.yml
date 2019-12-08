@@ -1,0 +1,11 @@
+
+- hosts: web01
+  become: yes
+  vars:
+       name: Chakri2
+       uid: 5559
+       comment: testing purpose
+  tasks:
+       - name: User creation
+         user: name={{name}} uid={{uid}}
+         when: ansible_facts['os_family'] == "Debian"
